@@ -8,15 +8,19 @@ import pandas as pd
 import time
 import os
 from itertools import islice
+from datetime import datetime
+import pytz 
 
 '''
 r_t =[] #_real,_time
 v_a =[] #_Vind,_kias
 v_g = [] #Vtrue,_ktgs
+v_t = [] #Vtrue,_ktas
 a_a = [] #hpath,__deg
 w_v = [] #vpath,__deg
 w_a = [] #_fuel,_1_lb
 a_g = [] #_fuel,_7_lb
+alpha = [] #
 '''
 
 '''
@@ -63,18 +67,19 @@ while True:
 '''
 
 
-
-host = '127.0.0.1'  # standard localhost
+#host = '127.0.0.1'  # standard localhost
+host = '129.161.48.132'
 port = 12345     # Arbitrary non-privileged port
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((host, port))
 
-print host , port
+print (host , port)
 s.listen(1)
 conn, addr = s.accept()
 print('Connected by', addr)
 
-first="r_t,v_a,v_g,a_a,w_v" 
+#first="r_t,v_a,v_g,a_a,w_v"
+first="alpha,v_t" 
 conn.sendall(first)
 
 lineNum = 2
@@ -87,15 +92,26 @@ while True:
 			next(csvfile)
 		readCSV = csv.reader(csvfile, delimiter='|')
 		for row in readCSV:
-			r_t=((row[0]))			
-			v_a=((row[7]))
-			v_g=((row[10]))
+			#r_t=((row[0]))			
+			#v_a=((row[7]))
+			#v_g=((row[10]))
+			v_t=((row[9]))
 			a_a=((row[22]))
 			w_v=((row[23]))
+			alpha=((row[20]))
 			csvfile.close()	
-			print(r_t,v_a,v_g,a_a,w_v)
-			data = ":2013-05-11 140001000-0500:"+','+r_t.strip()+','+v_a.strip()+','+v_g.strip()+','+a_a.strip()+','+w_v.strip()
+			print(r_t,v_a,v_g,a_a,w_v,alpha)
+			dt = datetime.now().isoformat()
+			date =dt[:10]
+			hour = dt[11:13] +"00"
+			mint = dt[14:16]
+			sec = dt[17:19]
+			msec = dt[20:23]
+			data = ":"+date+" "+ hour+mint+sec+msec+"-0500:"+','+alpha.strip()+v_t.strip()
+			#data = ":"+date+" "+ hour+mint+sec+msec+"-0500:"+','+r_t.strip()+','+v_a.strip()+','+v_g.strip()+','+a_a.strip()+','+w_v.strip()+alpha.strip()
 			conn.sendall(data)
 			break	
 	time.sleep(1.0)	        
+
+
 
