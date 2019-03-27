@@ -27,7 +27,7 @@
 ##### Instructions for using the code:
 * `python 2.xxx` is required to run the code.
 
-* Put the code in the main folder of Xplane where the generated `Data.txt` file is presnt. Then start pilots, start Xplane, open a terminal at the directory where the code is present, type `python xplaneDataToPilotsTcp.py` and hit `enter`.
+* Put the code in the main folder of Xplane where the generated `Data.txt` file is present. Then start pilots, start Xplane, open a terminal at the directory where the code is present, type `python xplaneDataToPilotsTcp.py` and hit `enter`.
 
 * To start injecting error, type `1` in the console window where `xplaneDataToPilotsTcp.py` is running and press `enter`.
 
