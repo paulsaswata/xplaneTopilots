@@ -41,12 +41,11 @@ s.sendall(first.encode())
 
 lineNum = 2
 
-corrupt = False
 
 while True:
 
-    
-	if corrupt == False:
+
+    try    
 		lineNum += 1
 		print(lineNum)
 		with open('Data.txt') as csvfile:
