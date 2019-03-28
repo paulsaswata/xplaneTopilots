@@ -27,7 +27,7 @@
 * The frequency at which new data is transferred can be set at line 64. Default value is `time.sleep(1.0)`, since Xplane updates the `Data.txt` file every one second.
 
 ##### Instructions for using the code:
-* `python 2.xxx` is required to run the code.
+* `python` is required to run the code.
 
 * Put the code in the main folder of Xplane where the generated `Data.txt` file is present. Then start PILOTS server, start Xplane, open a terminal at the directory where the code is present, type `python xplaneDataToPilotsTcp.py` and hit `enter`.
 
