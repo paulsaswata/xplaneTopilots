@@ -17,7 +17,7 @@
 ###### Selecting data to be sent to PILOTS server:
 * Send the desired data to PILOTS by editing line 60. By default, line 60 contains `data = ":"+date+" "+ hour+mint+sec+msec+"-0500:"+str(alpha)+','+str(v_t)+ '\r\n'`, which sends only `alpha` and `v_t`.
 
-* You also need to adjust line 31 accordingly. Default content is `first="#aoa,v" + '\r\n'`.
+* You also need to adjust the string `first` on line 31 accordingly. Default content is `first="#aoa,v" + '\r\n'`.
 
 ###### Setting adress of PILOTS server and changing the frequency of data transfer
 * Enter the IP and port of the PILOTS server on line 30. The default value is `s.connect(('127.0.0.1', 8888))`.
