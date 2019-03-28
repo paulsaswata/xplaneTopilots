@@ -19,6 +19,8 @@
 
 * You also need to adjust the string `first` on line 31 accordingly. Default content is `first="#aoa,v" + '\r\n'`.
 
+* The `"-0500:"` on line 60 may be changed to represent the desired time zone.
+
 ###### Setting adress of PILOTS server and changing the frequency of data transfer
 * Enter the IP and port of the PILOTS server on line 30. The default value is `s.connect(('127.0.0.1', 8888))`.
 
