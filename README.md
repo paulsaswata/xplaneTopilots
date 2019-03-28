@@ -29,9 +29,9 @@
 
 * Put the code in the main folder of Xplane where the generated `Data.txt` file is present. Then start PILOTS server, start Xplane, open a terminal at the directory where the code is present, type `python xplaneDataToPilotsTcp.py` and hit `enter`.
 
-* To start injecting error, type `1` in the console window where `xplaneDataToPilotsTcp.py` is running and press `enter`.
+* To ```diff + start``` injecting error, type `1` in the console window where `xplaneDataToPilotsTcp.py` is running and press `enter`.
 
-* To stop injecting error, type `2` in the console window where `xplaneDataToPilotsTcp.py` is running and press `enter`.
+* To ```diff + stop``` injecting error, type `2` in the console window where `xplaneDataToPilotsTcp.py` is running and press `enter`.
  
 
 ##### DISCLAIMER: 
